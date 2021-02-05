@@ -1,0 +1,17 @@
+{
+  "homepage": "https://Sunseungcheol.github.io/searchAutoComplete/",
+  "name": "search-auto-complete",
+  "version": "1.0.0",
+  "description": "과제로 제출했던 포트폴리오입니닫.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "author": "선승철",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
