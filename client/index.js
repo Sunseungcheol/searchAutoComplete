@@ -5,15 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function searchKeyup() {
-  fetch(`http://localhost:3000/autocomplete?keyword=${search.value}`)
+  let searchVal = search.value;
+  fetch(
+    `https://search-auto-complete-default-rtdb.firebaseio.com/autocomplete.json`
+  )
     .then((response) => response.json())
     .then((json) => {
       //console.log(json);
       const autocompResults = document.querySelector(".autocomplete-results");
       let autoText = "";
       //console.log(autocompResults);
-      for (let i = 0; i < json.length; i++) {
-        autoText += `<li>${json[i]}</li>`;
+      const array1 = json[searchVal] || [];
+      for (let i = 0; i < array1.length; i++) {
+        autoText += `<li>${json[searchVal][i]}</li>`;
       }
       autocompResults.innerHTML = autoText;
     })
